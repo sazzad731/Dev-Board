@@ -12,9 +12,23 @@
     </style>
   <title>DevBoard</title>
 </head>
-<body>
+<body id="theme-bg" class="bg-[#ecf0fa]">
   <header>
-    <h1 class="">Hello</h1>
+    <section class="max-w-[101.5rem] flex justify-between items-center bg-white mx-auto my-6 p-6 rounded-2xl">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="logo">
+        <p class="text-4xl font-light">Dev<span class="font-bold">Board</span></p>
+      </div>
+      <div class="flex items-center gap-12">
+        <div class="flex items-center gap-3">
+          <img src="assets/checkbox.png" alt="checkbox">
+          <span class="text-3xl font-bold mb-1">23</span>
+        </div>
+        <button id="theme-btn" class="cursor-pointer">
+          <img src="assets/theme-btn.png" alt="Button">
+        </button>
+      </div>
+    </section>
   </header>
   <script src="./JS/utilities.js"></script>
   <script src="./JS/main.js"></script>
