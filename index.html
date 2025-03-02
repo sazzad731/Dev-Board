@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- tailwind css link -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-      }
-    </style>
     <title>DevBoard</title>
   </head>
   <body id="theme-bg" class="bg-[#ecf0fa]">
@@ -25,7 +21,7 @@
         <div class="flex items-center gap-12">
           <div class="flex items-center gap-3">
             <img src="assets/checkbox.png" alt="checkbox" />
-            <span class="text-3xl font-bold mb-1">23</span>
+            <span id="completedTaskQuantity" class="text-3xl font-bold mb-1">23</span>
           </div>
           <button id="theme-btn" class="cursor-pointer">
             <img src="assets/theme-btn.png" alt="Button" />
@@ -34,21 +30,21 @@
       </section>
     </header>
 
-    <main class="max-w-[101.5rem] mx-auto">
-      <div class="bg-white rounded-2xl p-6">
+    <main class="max-w-[101.5rem] mx-auto flex justify-between gap-6">
+      <div class="bg-white rounded-2xl p-6 max-w-[75%]">
         <section
-          class="flex items-center justify-between border-b border-b-[#3751fd28] border-dashed pb-8"
+          class="flex items-center justify-between gap-6 border-b border-b-[#3751fd28] border-dashed pb-8"
         >
           <div class="flex items-center gap-9 p-8 bg-[#eef2fc] rounded-xl">
             <img src="assets/checkbox.png" alt="checkbox" />
             <div>
               <p class="font-medium text-[#00303C]">Task Assigned</p>
-              <span class="text-3xl font-bold">05</span>
+              <span id="AssignedTaskQuantity" class="text-3xl font-bold">06</span>
             </div>
           </div>
           <a
             href="pages/blog.html"
-            class="flex items-center gap-7 py-6 px-10 bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] rounded-xl"
+            class="flex items-center flex-1 gap-7 py-6 px-10 bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] rounded-xl"
           >
             <img src="assets/board.png" alt="board" />
             <p class="text-2xl font-medium text-white">
@@ -67,7 +63,7 @@
           </div>
         </section>
 
-        <section class="pt-8 grid grid-cols-3 gap-9">
+        <section id="allTask" class="pt-8 grid grid-cols-3 gap-9">
           <div class="p-6 bg-[#f0f3fd] rounded-2xl">
             <span class="text-base py-2 px-4 bg-white mb-4">ShopEase</span>
             <h3 class="text-2xl font-medium my-4">Fix Mobile Button Issue</h3>
@@ -81,7 +77,7 @@
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
                 <p class="text-base font-medium">21 March 2025</p>
               </div>
-              <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
+              <button class="py-3 px-5 bg-[#3752fd] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
           </div>
 
@@ -95,7 +91,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
-                <p class="text-base font-medium">21 March 2025</p>
+                <p class="text-base font-medium">25 March 2025</p>
               </div>
               <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
@@ -112,7 +108,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
-                <p class="text-base font-medium">21 March 2025</p>
+                <p class="text-base font-medium">31 March 2025</p>
               </div>
               <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
@@ -129,7 +125,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
-                <p class="text-base font-medium">21 March 2025</p>
+                <p class="text-base font-medium">01 April 2025</p>
               </div>
               <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
@@ -146,7 +142,7 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
-                <p class="text-base font-medium">21 March 2025</p>
+                <p class="text-base font-medium">05 April 2025</p>
               </div>
               <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
@@ -163,13 +159,25 @@
             <div class="flex items-center justify-between">
               <div>
                 <span class="text-sm text-[#5e5e5e]">Deadline</span>
-                <p class="text-base font-medium">21 March 2025</p>
+                <p class="text-base font-medium">07 April 2025</p>
               </div>
               <button class="py-3 px-5 bg-[#3752FD] text-white text-base font-medium cursor-pointer rounded-lg">Completed</button>
             </div>
           </div>
         </section>
       </div>
+
+      <aside class="bg-white py-6 px-8 w-[25%] rounded-2xl">
+        <div class="flex items-center flex-col gap-4 border-b border-[#3751fd44] border-dashed pb-4 mb-6">
+          <div class="flex items-center gap-4">
+            <img src="assets/activity.png" alt="activity">
+            <p class="text-xl font-medium">Activity Log</p>
+          </div>
+          <button id="clearHistory" class="py-3 px-5 text-base font-medium bg-[#3752FD] rounded-lg text-white cursor-pointer">ClearHistory</button>
+        </div>
+        <div id="history-content">
+        </div>
+      </aside>
     </main>
 
     <script src="./JS/utilities.js"></script>
